@@ -8,9 +8,8 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Schedules from "./pages/Schedules";
-
-let usuariolink = "PATHISHERE";
-let arrobaUsuario = `/${usuariolink}`;
+import Services from "./pages/Services";
+import NewService from "./pages/NewService";
 
 const PrivateRoute = ({ children, redirectTo }) => {
   const isAuthenticated = localStorage.getItem("@user-id") !== null;
@@ -48,6 +47,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute redirectTo={"/"}>
             <Schedules />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "services",
+        element: (
+          <PrivateRoute redirectTo={"/"}>
+            <Services />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "services/new",
+        element: (
+          <PrivateRoute redirectTo={"/"}>
+            <NewService />
           </PrivateRoute>
         ),
       },

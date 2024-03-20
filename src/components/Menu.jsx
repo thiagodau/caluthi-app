@@ -13,6 +13,9 @@ export default function Menu() {
           <Link to="/dashboard/schedules">Agendamentos</Link>
         </li>
         <li>
+          <Link to="/dashboard/services">Serviços</Link>
+        </li>
+        <li>
           <Link to="/">Sair.</Link>
         </li>
       </ul>

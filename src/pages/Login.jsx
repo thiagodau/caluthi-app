@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { getDatabase, ref, get, child } from "firebase/database";
 import "../firebaseConfig";
 
-import { getDatabase, ref, get, child } from "firebase/database";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,11 +11,11 @@ export default function Login() {
   const navigate = useNavigate();
 
   const acessar = () => {
-    if(email && password) {
+    if (email && password) {
       let user = { email, password };
       validacaoUsuario(user);
-    }else {
-      alert('Campos vazios.')
+    } else {
+      alert("Campos vazios.");
     }
   };
 
@@ -79,7 +79,9 @@ export default function Login() {
       <br />
       <br />
 
-      <p style={{fontSize:'12px'}}><Link to="/singup">Cadastre-se aqui.</Link></p>
+      <p style={{ fontSize: "12px" }}>
+        <Link to="/singup">Cadastre-se aqui.</Link>
+      </p>
     </>
   );
 }

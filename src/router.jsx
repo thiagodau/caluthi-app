@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import Schedules from "./pages/Schedules";
 import Services from "./pages/Services";
 import NewService from "./pages/NewService";
+import Singup from "./pages/Singup";
 
 const PrivateRoute = ({ children, redirectTo }) => {
   const isAuthenticated = localStorage.getItem("@user-id") !== null;
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Login />,
+      },
+      {
+        path: "singup",
+        element: <Singup />,
       },
     ],
   },

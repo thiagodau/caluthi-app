@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../firebaseConfig";
 
@@ -75,6 +75,11 @@ export default function Login() {
       <button id="btnAcessar" onClick={acessar}>
         Acessar
       </button>
+
+      <br />
+      <br />
+
+      <p style={{fontSize:'12px'}}><Link to="/singup">Cadastre-se aqui.</Link></p>
     </>
   );
 }
